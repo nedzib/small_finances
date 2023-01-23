@@ -28,9 +28,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.18, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.10, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="devise (v4.8.1, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.11.0, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v1.0.0, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.12.0, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
@@ -43,17 +45,20 @@
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.2, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.5.8, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.13.8, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.6.0, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.2.4, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.0.2, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.0.3, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.4.3, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.0.6, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="responders (v3.0.1, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rexml (v3.2.5, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.1.1, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.4.2, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.2.1, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.5, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.5, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, Remote-rbenv: ruby-2.7.4-p191) [gem]" level="application" />
   </component>
