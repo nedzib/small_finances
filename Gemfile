@@ -73,3 +73,4 @@ end
 
 gem 'devise', '~> 4.2'
 gem 'view_component', '~> 2.82'
+gem "annotate", "~> 3.2"
