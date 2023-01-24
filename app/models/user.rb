@@ -22,5 +22,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :months
+  has_and_belongs_to_many :user_groups
+
+  after_save do
+    UserGroup.create!(users: [self], name: "#{self.id}_group")
+  end
+
+  def groups
+    self.user_groups
+  end
 end

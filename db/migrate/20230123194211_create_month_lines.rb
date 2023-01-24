@@ -6,7 +6,7 @@ class CreateMonthLines < ActiveRecord::Migration[7.0]
       t.string :concept
       t.decimal :value
       t.string :additional_info
-      t.boolean :paid
+      t.boolean :paid, :default => false
 
       t.timestamps
     end

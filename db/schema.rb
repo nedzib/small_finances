@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_23_194211) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_24_115211) do
   create_table "month_lines", force: :cascade do |t|
     t.integer "month_id", null: false
     t.integer "type_id", null: false
     t.string "concept"
     t.decimal "value"
     t.string "additional_info"
-    t.boolean "paid"
+    t.boolean "paid", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["month_id"], name: "index_month_lines_on_month_id"
@@ -25,25 +25,39 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_23_194211) do
   end
 
   create_table "months", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.boolean "active"
-    t.decimal "final_balance"
-    t.decimal "total_debt"
+    t.boolean "active", default: false
+    t.decimal "final_balance", default: "0.0"
+    t.decimal "total_debt", default: "0.0"
     t.date "period"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_months_on_user_id"
+    t.integer "user_group_id", null: false
+    t.index ["user_group_id"], name: "index_months_on_user_group_id"
   end
 
   create_table "types", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.string "name"
     t.string "code"
     t.string "color"
-    t.integer "operation"
+    t.integer "operator"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_types_on_user_id"
+    t.integer "user_group_id", null: false
+    t.index ["user_group_id"], name: "index_types_on_user_group_id"
+  end
+
+  create_table "user_groups", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_groups_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "user_group_id"
+    t.index ["user_group_id"], name: "index_user_groups_users_on_user_group_id"
+    t.index ["user_id"], name: "index_user_groups_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,6 +74,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_23_194211) do
 
   add_foreign_key "month_lines", "months"
   add_foreign_key "month_lines", "types"
-  add_foreign_key "months", "users"
-  add_foreign_key "types", "users"
+  add_foreign_key "months", "user_groups"
+  add_foreign_key "types", "user_groups"
 end

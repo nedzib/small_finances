@@ -5,7 +5,7 @@
 #  id              :integer          not null, primary key
 #  additional_info :string
 #  concept         :string
-#  paid            :boolean
+#  paid            :boolean          default(FALSE)
 #  value           :decimal(, )
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
