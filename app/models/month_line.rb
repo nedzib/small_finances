@@ -24,12 +24,11 @@
 #
 class MonthLine < ApplicationRecord
   belongs_to :month
-  has_one :type
+  belongs_to :type
 
   validates :month, presence: true
   validates :type, presence: true
   validates :value, presence: true
   validates :concept, presence: true
-  validates :paid, presence: true
 
 end

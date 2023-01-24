@@ -21,6 +21,7 @@
 #
 class Month < ApplicationRecord
   belongs_to :user_group
+  has_many :month_lines
 
   validates :user_group, presence: true
   validates :period, presence: true

@@ -1,5 +1,7 @@
 <article>
-  <h4 style="margin-bottom: 0"><%= @month.period.strftime('%B-%Y') %></h4>
+  <%= link_to(month_path(@month)) do %>
+    <h4 style="margin-bottom: 0"><%= @month.period.strftime('%B-%Y') %></h4>
+  <% end %>
   <% unless @month.active %>
     <div style="border: solid; border-radius: 10px; border-color: red"></div>
   <% else %>
