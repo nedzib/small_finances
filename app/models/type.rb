@@ -22,7 +22,7 @@
 class Type < ApplicationRecord
   belongs_to :user_group
 
-  validates :code, uniqueness: { scope: :user_id }
+  validates :code, uniqueness: { scope: :user_group }
   validates :name, presence: true
   validates :operator, presence: true
   validates :color, presence: true

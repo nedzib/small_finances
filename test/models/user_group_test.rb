@@ -3,6 +3,7 @@
 # Table name: user_groups
 #
 #  id          :integer          not null, primary key
+#  active      :boolean          default(FALSE)
 #  description :string
 #  name        :string           not null
 #  created_at  :datetime         not null
