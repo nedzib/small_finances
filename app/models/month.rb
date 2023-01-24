@@ -25,4 +25,6 @@ class Month < ApplicationRecord
   validates :user_group, presence: true
   validates :period, presence: true
 
+  default_scope { order(period: :desc) }
+
 end
