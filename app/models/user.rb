@@ -24,8 +24,9 @@ class User < ApplicationRecord
 
   has_and_belongs_to_many :user_groups
 
-  after_save do
-    UserGroup.create!(users: [self], name: "#{self.id}_group", active: true)
+  after_create do
+    user_group = UserGroup.create!(users: [self], name: "#{self.id}_group", active: true)
+    Month.create!(user_group: user_group, period: Time.zone.now.beginning_of_month, active: true)
   end
 
   def groups
