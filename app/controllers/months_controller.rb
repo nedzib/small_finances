@@ -8,6 +8,9 @@ class MonthsController < ApplicationController
 
   # GET /months/1 or /months/1.json
   def show
+    @balance = get_balance
+    @paid_balance = get_paid_balance
+    @total_lines = get_total_lines
   end
 
   # GET /months/new
@@ -66,5 +69,22 @@ class MonthsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def month_params
       params.fetch(:month, {})
+    end
+
+    def get_balance
+      balance = 0
+      @month.month_lines.each do |line|
+        balance += line.value if line.addition?
+        balance -= line.value if line.subtract?
+      end
+      balance
+    end
+
+    def get_paid_balance
+      @month.month_lines.count(&:paid)
+    end
+
+    def get_total_lines
+      @month.month_lines.count
     end
 end

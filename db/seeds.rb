@@ -22,6 +22,6 @@ MonthLine.create!(month: month_dic, type: type_4, concept: "Salario Bug", value:
 MonthLine.create!(month: month_dic, type: type_3, concept: "Prestamo", value: 2000, paid: true)
 
 MonthLine.create!(month: month_jan, type: type_4, concept: "Salario Bug", value: 3000)
-MonthLine.create!(month: month_dic, type: type_3, concept: "Prestamo", value: 250, paid: true)
-MonthLine.create!(month: month_dic, type: type_2, concept: "Luz", value: 20)
-MonthLine.create!(month: month_dic, type: type_1, concept: "Arriendo", value: 200)
+MonthLine.create!(month: month_jan, type: type_3, concept: "Prestamo", value: 250, paid: true)
+MonthLine.create!(month: month_jan, type: type_2, concept: "Luz", value: 20)
+MonthLine.create!(month: month_jan, type: type_1, concept: "Arriendo", value: 200)

@@ -3,8 +3,38 @@
 <%= render @month %>
 
 <div>
-  <%= link_to "Edit this month", edit_month_path(@month) %> |
-  <%= link_to "Back to months", months_path %>
+  <%= link_to "Back to months", root_path %>
 
-  <%= button_to "Destroy this month", @month, method: :delete %>
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">Concepto</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Pago/Recibido</th>
+      <th scope="col">Informacion Adicional</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%=render Line::Component.with_collection(@month.month_lines) %>
+    </tbody>
+    <tfoot>
+    <tr>
+      <th scope="col"></th>
+      <td scope="col"></td>
+      <td scope="col">
+        <%= @balance %>
+      </td>
+      <td scope="col">
+        <%= @paid_balance.to_s + ' de ' + @total_lines.to_s%>
+      </td>
+      <td scope="col"></td>
+    </tr>
+    </tfoot>
+  </table>
+
+  <div style="display: none">
+    <%= button_to "Destroy this month", @month, method: :delete %>
+  </div>
+
 </div>

@@ -23,6 +23,12 @@
 #  type_id   (type_id => types.id)
 #
 class MonthLine < ApplicationRecord
+
+  delegate :subtract?, to: :type
+  delegate :addition?, to: :type
+
+
+
   belongs_to :month
   belongs_to :type
 
@@ -30,5 +36,7 @@ class MonthLine < ApplicationRecord
   validates :type, presence: true
   validates :value, presence: true
   validates :concept, presence: true
+
+
 
 end
