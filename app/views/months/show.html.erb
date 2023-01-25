@@ -1,9 +1,17 @@
 <p style="color: green"><%= notice %></p>
-<div>
-  <%= link_to "Back to months", root_path %>
+<div class="w-100 h-100 d-flex d-flex flex-column align-top" >
+  <ol class="breadcrumb">
 
-  <table>
-    <thead>
+    <li class="breadcrumb-item"><a href="#">
+      <%= link_to "Months", root_path %>
+    </a></li>
+    <li class="breadcrumb-item active">
+      <%= @month.period.strftime('%B-%Y') %>
+    </li>
+  </ol>
+
+  <table class="table table-hover">
+    <thead class="table-secondary">
     <tr>
       <th scope="col">Concepto</th>
       <th scope="col">Tipo</th>
