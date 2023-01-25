@@ -1,5 +1,14 @@
-<div class="w-100 h-100 d-flex d-flex flex-column align-top">
-  <h1>Months</h1>
-  <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete} %>
+<div class="w-100 h-100 d-flex d-flex flex-column align-top mt-3">
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item">
+      <a href="#">
+      <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete} %>
+      </a>
+    </li>
+    <li class="breadcrumb-item active">
+      Months
+    </li>
+  </ol>
   <%=render Card::Component.with_collection(@months) %>
 </div>

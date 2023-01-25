@@ -17,14 +17,18 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
+  attr_accessor :skip_create_mins
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  after_create :create_mins
+
   has_and_belongs_to_many :user_groups
 
-  after_create do
+  def create_mins
+    return if skip_create_mins
     user_group = UserGroup.create!(users: [self], name: "#{self.id}_group", active: true)
     Month.create!(user_group: user_group, period: Time.zone.now.beginning_of_month, active: true)
   end
