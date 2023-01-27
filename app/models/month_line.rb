@@ -26,6 +26,7 @@ class MonthLine < ApplicationRecord
 
   delegate :subtract?, to: :type
   delegate :addition?, to: :type
+  delegate :name, to: :type , prefix: true
 
 
 
