@@ -71,7 +71,11 @@ group :test do
   gem "webdrivers"
 end
 
+# Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.2'
+# A framework for building reusable, testable & encapsulated view components in Ruby on Rails.
 gem 'view_component', '~> 2.82'
+# Annotates Rails/ActiveRecord Models, routes, fixtures, and others based on the database schema.
 gem "annotate", "~> 3.2"
+# Sass adapter for the Rails asset pipeline.
 gem 'sass-rails'

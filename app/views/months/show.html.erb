@@ -31,7 +31,9 @@
     <tfoot>
     <tr>
       <th scope="col">
-        <span class="badge bg-secondary p-2" style="color: white; font-size: 20px">+</span>
+        <% if @month.active? %>
+          <span class="badge bg-secondary p-2" style="color: white; font-size: 20px">+</span>
+        <% end %>
       </th>
       <td scope="col"></td>
       <td scope="col">
@@ -41,7 +43,11 @@
         <%= @paid_balance.to_s + ' de ' + @total_lines.to_s%>
       </td>
       <td scope="col"></td>
-      <td scope="col"></td>
+      <td scope="col">
+        <% if @month.active? %>
+          <span class="badge bg-secondary p-2" style="color: white; font-size: 20px">Cerrar Mes</span>
+        <% end %>
+      </td>
     </tr>
     </tfoot>
   </table>
