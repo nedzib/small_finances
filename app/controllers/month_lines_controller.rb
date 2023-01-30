@@ -7,9 +7,9 @@ class MonthLinesController < ApplicationController
     @month_line = MonthLine.new(post_params)
     respond_to do |format|
       if @month_line.save
-        format.html { redirect_to request.referrer, notice: "Genial, has creado una linea!" }
+        format.html { redirect_to request.referrer, notice: "Cool, you've created a line!" }
       else
-        format.html { redirect_to request.referrer, notice: "Algo salio mal", status: :unprocessable_entity }
+        format.html { redirect_to request.referrer, notice: "Something went wrong", status: :unprocessable_entity }
       end
     end
   end
@@ -17,7 +17,7 @@ class MonthLinesController < ApplicationController
   def destroy
     @month_line.destroy
     respond_to do |format|
-      format.html { redirect_to request.referrer, notice: "Post was successfully destroyed." }
+      format.html { redirect_to request.referrer, notice: "Line was successfully destroyed." }
     end
   end
 

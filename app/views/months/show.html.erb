@@ -16,12 +16,12 @@
   <table class="table table-hover">
     <thead class="table-secondary">
     <tr>
-      <th scope="col">Concepto</th>
-      <th scope="col">Tipo</th>
-      <th scope="col">Valor</th>
-      <th scope="col">Pago/Recibido</th>
-      <th scope="col">Informacion Adicional</th>
-      <th scope="col">Acciones</th>
+      <th scope="col">Concept</th>
+      <th scope="col">Type</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Paid/Received</th>
+      <th scope="col">Additional Info</th>
+      <th scope="col">Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -70,16 +70,12 @@
       <td scope="col"></td>
       <td scope="col">
         <% if @month.active? %>
-          <span role="button" class="badge bg-secondary p-2" style="color: white; font-size: 20px">Cerrar Mes</span>
+          <span role="button" class="badge bg-secondary p-2" style="color: white; font-size: 20px">Close Month</span>
         <% end %>
       </td>
     </tr>
     </tfoot>
   </table>
-
-  <div style="display: none">
-    <%= button_to "Destroy this month", @month, method: :delete %>
-  </div>
   <p style="color: green"><%= notice %></p>
 
 </div>
