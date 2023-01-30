@@ -12,6 +12,7 @@ class MonthsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_month
       @month = Month.find(params[:id])
+      @month_line = MonthLine.new
     end
 
     def get_balance

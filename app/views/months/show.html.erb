@@ -1,5 +1,4 @@
-<p style="color: green"><%= notice %></p>
-<div class="w-100 h-100 d-flex d-flex flex-column align-top" >
+<div class="w-100 h-100 d-flex d-flex flex-column align-top" x-data="{ open: false }">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
       <a href="#">
@@ -27,12 +26,38 @@
     </thead>
     <tbody>
     <%=render Line::Component.with_collection(@month.month_lines) %>
+    <tr x-show="open">
+      <%= form_with(model: @month_line , class: "contents") do |form| %>
+      <th scope="col">
+        <%= form.hidden_field :month_id, value: @month.id %>
+        <%= form.text_field :concept, class: "form-control" %>
+      </th>
+      <th scope="col" class="form-group">
+        <%= form.select(:type_id, current_user.active_group.types.pluck(:name, :id), {}, {:class => "form-select"}) %>
+      </th>
+      <th scope="col">
+        <%= form.number_field :value, class: "form-control" %>
+      </th>
+      <th scope="col">
+        <div class="form-check form-switch">
+          <%= form.check_box :paid, class: "form-check-input", style: "height: 1.5rem; width: 2.5rem;"%>
+        </div>
+      </th>
+      <th scope="col">
+        <%= form.text_field :additional_info, class: "form-control" %>
+      </th>
+      <th scope="col">
+        <%= form.submit "+", class: "btn btn-success" %>
+        <span class="btn btn-danger" @click="open = false">x</span>
+      </th>
+      <% end %>
+    </tr>
     </tbody>
     <tfoot>
     <tr>
       <th scope="col">
         <% if @month.active? %>
-          <span class="badge bg-secondary p-2" style="color: white; font-size: 20px">+</span>
+          <span role="button" class="badge bg-secondary" @click="open = true">+</span>
         <% end %>
       </th>
       <td scope="col"></td>
@@ -45,7 +70,7 @@
       <td scope="col"></td>
       <td scope="col">
         <% if @month.active? %>
-          <span class="badge bg-secondary p-2" style="color: white; font-size: 20px">Cerrar Mes</span>
+          <span role="button" class="badge bg-secondary p-2" style="color: white; font-size: 20px">Cerrar Mes</span>
         <% end %>
       </td>
     </tr>
@@ -55,5 +80,6 @@
   <div style="display: none">
     <%= button_to "Destroy this month", @month, method: :delete %>
   </div>
+  <p style="color: green"><%= notice %></p>
 
 </div>

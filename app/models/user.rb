@@ -36,4 +36,8 @@ class User < ApplicationRecord
   def groups
     self.user_groups
   end
+
+  def active_group
+    self.user_groups.active.last
+  end
 end
